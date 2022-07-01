@@ -4,9 +4,10 @@
   "description": "api bodegon",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test node ./dist/index.js",
     "dev": "cross-env NODE_ENV=dev node ./dist/index.js",
     "start": "cross-env NODE_ENV=start node ./dist/index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose ",
+    "test:watch": "npm run test -- --watch",
     "ts": "tsc -w"
   },
   "author": "gabriel",

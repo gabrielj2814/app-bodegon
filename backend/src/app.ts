@@ -6,7 +6,6 @@ import logger from "morgan"
 dotEnv.config({path: path.resolve(__dirname, "../.env")})
 
 const {PORT,NODE_ENV} = process.env
-console.log(NODE_ENV)
 const app = express()
 // set
 app.set("port",PORT || 5000)

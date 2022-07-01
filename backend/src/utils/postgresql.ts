@@ -4,9 +4,9 @@ import dotEnv from "dotenv"
 import path from "path"
 dotEnv.config({ path: path.resolve(__dirname, '../.env') })
 
-let {NODE_ENV,DB_HOST,DB_PORT,DB_USER,DB_PASS,DB_NAME_PRO,DB_NAME_DEV} = process.env
-const DB= (NODE_ENV==="test")? DB_NAME_DEV : DB_NAME_PRO
-
+let {NODE_ENV,DB_HOST,DB_PORT,DB_USER,DB_PASS,DB_NAME_PRO,DB_NAME_TEST,DB_NAME_DEV} = process.env
+const DB= (DB_NAME_TEST==="test")? DB_NAME_TEST : (DB_NAME_DEV==="dev")? DB_NAME_DEV : DB_NAME_PRO
+console.log(DB)
 class PostgreSql implements DriverInterfaz{
 
     host: string
